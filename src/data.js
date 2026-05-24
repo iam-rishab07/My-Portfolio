@@ -1,6 +1,6 @@
 export const portfolioData = {
   personal: {
-    name: "Vrushabh Sakharam Gorivale",
+    name: "Vrushabh Gorivale",
     role: "Java Full Stack Developer",
     email: "vrushabhgorivale28@gmail.com",
     github: "https://github.com/iam-rishab07",
