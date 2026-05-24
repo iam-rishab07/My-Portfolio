@@ -1,0 +1,117 @@
+import React from 'react';
+// We use lucide-react for standard UI icons
+import { Mail, ChevronRight, Terminal } from 'lucide-react';
+// We use react-icons for brand logos (Github & Linkedin)
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import './App.css';
+import { portfolioData } from './data';
+
+function App() {
+  const { personal, hero, education, skills, projects } = portfolioData;
+
+  return (
+    <div className="app-wrapper">
+      <nav className="navbar">
+        <div className="nav-logo">
+          <Terminal size={24} color="#38bdf8" />
+          <span>vg.dev</span>
+        </div>
+        <div className="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+        </div>
+      </nav>
+
+      <main className="container">
+        {/* Hero Section */}
+        <section className="hero fade-in">
+          <div className="hero-content">
+            <div className="hero-text">
+              <p className="greeting">Hi, my name is</p>
+              <h1 className="name">{personal.name}.</h1>
+              <h2 className="role">I build the backend of the internet.</h2>
+              <p className="hero-desc">{hero.description}</p>
+              
+              <div className="social-links">
+                <a href={personal.github} target="_blank" rel="noreferrer"><FaGithub size={20} /></a>
+                <a href={personal.linkedin} target="_blank" rel="noreferrer"><FaLinkedin size={20} /></a>
+                <a href={`mailto:${personal.email}`}><Mail size={20} /></a>
+              </div>
+            </div>
+            
+            {/* New Profile Image Section */}
+            <div className="hero-image-container">
+              <img src="/profile.jpg" alt={personal.name} className="hero-image" />
+            </div>
+          </div>
+        </section>
+
+        {/* Education Section */}
+        <section id="about" className="section slide-up">
+          <h3 className="section-title"><span>01.</span> Education & Background</h3>
+          <div className="timeline">
+            {education.map((edu, index) => (
+              <div className="timeline-item" key={index}>
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <h4>{edu.degree}</h4>
+                  <p className="institution">{edu.institution}</p>
+                  <p className="duration">{edu.duration}</p>
+                  <p className="details">{edu.details}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section id="skills" className="section slide-up">
+          <h3 className="section-title"><span>02.</span> Technical Arsenal</h3>
+          <div className="skills-grid">
+            {Object.entries(skills).map(([category, items]) => (
+              <div className="skill-card" key={category}>
+                <h4>{category}</h4>
+                <ul className="skill-list">
+                  {items.map(skill => (
+                    <li key={skill}><ChevronRight size={14} className="list-icon"/> {skill}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="section slide-up">
+          <h3 className="section-title"><span>03.</span> Featured Architecture</h3>
+          <div className="projects-grid">
+            {projects.map((project, index) => (
+              <div className="project-card" key={index}>
+                <div className="project-header">
+                  <h4>{project.title}</h4>
+                </div>
+                <p className="project-desc">{project.description}</p>
+                <div className="project-tags">
+                  {project.tags.map(tag => (
+                    <span className="mono-tag" key={tag}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="footer slide-up">
+          <h2>What's Next?</h2>
+          <p>Currently open to new opportunities and collaborations in software development.</p>
+          <a href={`mailto:${personal.email}`} className="cta-button">Say Hello</a>
+          <p className="footer-credit">Built with React by {personal.name}</p>
+        </footer>
+      </main>
+    </div>
+  );
+}
+
+export default App;
