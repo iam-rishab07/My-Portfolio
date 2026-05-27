@@ -5,6 +5,7 @@ import { Mail, ChevronRight, Terminal } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import './App.css';
 import { portfolioData } from './data';
+import profileImg from './profile.png';
 
 function App() {
   const { personal, hero, education, skills, projects } = portfolioData;
@@ -14,7 +15,7 @@ function App() {
       <nav className="navbar">
         <div className="nav-logo">
           <Terminal size={24} color="#38bdf8" />
-          <span>vg.dev</span>
+          <span>Portfolio VG</span>
         </div>
         <div className="nav-links">
           <a href="#about">About</a>
@@ -42,7 +43,8 @@ function App() {
             
             {/* New Profile Image Section */}
             <div className="hero-image-container">
-              <img src="/profile.jpg" alt={personal.name} className="hero-image" />
+              
+              <img src={profileImg} alt={personal.name} className="hero-image" />
             </div>
           </div>
         </section>
@@ -91,6 +93,31 @@ function App() {
                 <div className="project-header">
                   <h4>{project.title}</h4>
                 </div>
+                <p>
+  <a 
+    href={project.link} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="project-link-icon"
+  >
+    View Project 
+    {/* This is the standard external link SVG icon */}
+    <svg 
+      width="16" 
+      height="16" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+      <polyline points="15 3 21 3 21 9"></polyline>
+      <line x1="10" y1="14" x2="21" y2="3"></line>
+    </svg>
+  </a>
+</p>
                 <p className="project-desc">{project.description}</p>
                 <div className="project-tags">
                   {project.tags.map(tag => (

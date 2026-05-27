@@ -14,13 +14,13 @@ export const portfolioData = {
     {
       institution: "Haribhai V. Desai College of Arts, Commerce and Science (SPPU)",
       degree: "B.Sc. in Computer Science",
-      duration: "Present (Final Semester)",
+      duration: "2023 - 2026",
       details: "9.25 CGPA. Focused on software engineering, data structures, and full-stack development."
     },
     {
       institution: "S. M. Choksey High School",
       degree: "12th Grade / HSC",
-      duration: "Completed",
+      duration: "2021 - 2023",
       details: "Core focus on sciences and mathematics, laying the foundation for computer science."
     }
   ],
@@ -41,6 +41,12 @@ export const portfolioData = {
       title: "ShowTime – Online Movie Booking System",
       description: "Engineered a full-stack movie booking platform handling 100+ concurrent seat reservations with zero booking conflicts using transactional integrity via Spring Boot, Hibernate ORM, and JPA. Optimized 10+ SQL queries on a normalized MySQL schema, reducing average API response time by 40%.",
       tags: ["Spring Boot", "React.js", "Hibernate", "JPA", "MySQL", "2026"]
+    },
+    {
+      title: "Botanica - eCommerce Boutique",
+      link: "https://botanica-by-rishi.vercel.app",
+      description: "Enhanced user engagement and interactive browsing by building a luxury botanical e-commerce boutique with hardware-accelerated 3D parallax hover cards. Engineered 5+ RESTful APIs in Spring Boot for user authentication, catalog management, order processing, and testimonial moderation. Containerized the entire multi-tier stack (React, Spring Boot, MySQL) using Docker, cutting deployment setup time by 80%, and implemented layered MVC architecture following SOLID principles.",
+      tags: ["Java", "Spring Boot", "React.js", "Docker", "2026"]
     },
     {
       title: "OmniBox – Cloud Storage Application",

@@ -377,7 +377,12 @@ p {
   border-top: 1px solid var(--border-color);
   background-color: var(--bg-secondary);
 }
-
+.project-link-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* Adds a little space between the text and the icon */
+  text-decoration: none;
+}
 .footer h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
