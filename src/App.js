@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // We use lucide-react for standard UI icons
-import { Mail, ChevronRight, Terminal } from 'lucide-react';
+import { Mail, ChevronRight, Terminal, Sun, Moon } from 'lucide-react';
 // We use react-icons for brand logos (Github & Linkedin)
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import './App.css';
@@ -9,18 +9,49 @@ import profileImg from './profile.png';
 
 function App() {
   const { personal, hero, education, skills, projects } = portfolioData;
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) return savedTheme;
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return prefersDark ? 'dark' : 'light';
+    }
+    return 'dark'; // Fallback default
+  });
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+  };
 
   return (
     <div className="app-wrapper">
       <nav className="navbar">
         <div className="nav-logo">
-          <Terminal size={24} color="#38bdf8" />
+          <Terminal size={24} className="logo-icon" />
           <span>Portfolio VG</span>
         </div>
-        <div className="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
+        <div className="nav-actions">
+          <div className="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+          </div>
+          <button 
+            onClick={toggleTheme} 
+            className="theme-toggle-btn" 
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
+          >
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
         </div>
       </nav>
 
