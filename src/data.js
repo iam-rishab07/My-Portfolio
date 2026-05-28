@@ -34,6 +34,7 @@ export const portfolioData = {
   projects: [
     {
       title: "AI Resume Analyzer",
+      link: "https://ai-resume-analyzer-ashy-ten.vercel.app",
       description: "Reduced manual resume screening time by 70% by building an AI-powered ATS resume analyzer. Engineered 5+ RESTful APIs for parsing, keyword extraction, and job-description matching. Containerized the application using Docker, cutting deployment setup time by 80%, and implemented layered MVC architecture following SOLID principles.",
       tags: ["Java", "Spring Boot", "REST API", "Docker", "2025"]
     },
