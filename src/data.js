@@ -37,20 +37,23 @@ export const portfolioData = {
       link: "https://ai-resume-analyzer-rishi.vercel.app",
       description: "Reduced manual resume screening time by 70% by building an AI-powered ATS resume analyzer. Engineered 5+ RESTful APIs for parsing, keyword extraction, and job-description matching. Containerized the application using Docker, cutting deployment setup time by 80%, and implemented layered MVC architecture following SOLID principles.",
       tags: ["Java", "Spring Boot", "REST API", "Docker", "2025"],
-      category: "backend"
+      category: "backend",
+      featured: true
     },
     {
       title: "ShowTime – Online Movie Booking System",
       description: "Engineered a full-stack movie booking platform handling 100+ concurrent seat reservations with zero booking conflicts using transactional integrity via Spring Boot, Hibernate ORM, and JPA. Optimized 10+ SQL queries on a normalized MySQL schema, reducing average API response time by 40%.",
       tags: ["Spring Boot", "React.js", "Hibernate", "JPA", "MySQL", "2026"],
-      category: "backend"
+      category: "backend",
+      featured: true
     },
     {
       title: "Botanica - eCommerce Boutique",
       link: "https://botanica-by-rishi.vercel.app",
       description: "Enhanced user engagement and interactive browsing by building a luxury botanical e-commerce boutique with hardware-accelerated 3D parallax hover cards. Engineered 5+ RESTful APIs in Spring Boot for user authentication, catalog management, order processing, and testimonial moderation. Containerized the entire multi-tier stack (React, Spring Boot, MySQL) using Docker, cutting deployment setup time by 80%, and implemented layered MVC architecture following SOLID principles.",
       tags: ["Java", "Spring Boot", "React.js", "Docker", "2026"],
-      category: "fullstack"
+      category: "fullstack",
+      featured: true
     },
     {
       title: "TaskFlow – Agile Project Board",

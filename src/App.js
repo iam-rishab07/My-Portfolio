@@ -20,7 +20,7 @@ function App() {
   });
 
   const [activeSection, setActiveSection] = useState('home');
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('featured');
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
@@ -80,7 +80,9 @@ function App() {
 
   const filteredProjects = selectedCategory === 'all'
     ? projects
-    : projects.filter(project => project.category === selectedCategory);
+    : selectedCategory === 'featured'
+      ? projects.filter(project => project.featured).slice(0, 3)
+      : projects.filter(project => project.category === selectedCategory);
 
   return (
     <div className="app-wrapper">
@@ -186,6 +188,7 @@ function App() {
               >
                 <Filter size={16} className="filter-icon" />
                 <span>
+                  {selectedCategory === 'featured' && 'Featured Projects'}
                   {selectedCategory === 'all' && 'All Projects'}
                   {selectedCategory === 'frontend' && 'Frontend'}
                   {selectedCategory === 'backend' && 'Backend'}
@@ -197,6 +200,14 @@ function App() {
               
               {dropdownOpen && (
                 <ul className="filter-dropdown-menu" role="listbox">
+                  <li 
+                    className={selectedCategory === 'featured' ? 'active' : ''} 
+                    onClick={() => { setSelectedCategory('featured'); setDropdownOpen(false); }}
+                    role="option"
+                    aria-selected={selectedCategory === 'featured'}
+                  >
+                    Featured Projects
+                  </li>
                   <li 
                     className={selectedCategory === 'all' ? 'active' : ''} 
                     onClick={() => { setSelectedCategory('all'); setDropdownOpen(false); }}
