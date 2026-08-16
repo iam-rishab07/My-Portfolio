@@ -12,6 +12,12 @@ export const portfolioData = {
   },
   education: [
     {
+      institution: "Vishwakarma University",
+      degree: "M.Sc. in Computer Science",
+      duration: "2026 - 2028",
+      details: "Focused on Advanced Research, Artificial Intelligence, Machine Learning, and Emerging Technologies."
+    },
+    {
       institution: "Haribhai V. Desai College of Arts, Commerce and Science (SPPU)",
       degree: "B.Sc. in Computer Science",
       duration: "2023 - 2026",
